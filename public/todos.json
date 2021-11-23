@@ -1,0 +1,50 @@
+[
+  {
+    "id" : 1,
+    "taskTitle" : "Спорт",
+    "task" : "пойти побегать 3 км надо",
+    "performer" : "Leanne Graham",
+    "performerId" : 1,
+    "state" : "Ожидание"
+  },
+  {
+    "id" : 2,
+    "taskTitle" : "Спорт",
+    "task" : "Нужно записаться в зал",
+    "performer" : "Ervin Howell",
+    "performerId" : 2,
+    "state" : "Ожидание"
+  },
+  {
+    "id" : 3,
+    "taskTitle" : "Здоровье",
+    "task" : "Наладить режим сна",
+    "performer" : "Clementine Bauch",
+    "performerId" : 3,
+    "state" : "Ожидание"
+  },
+  {
+    "id" : 4,
+    "taskTitle" : "Здоровье",
+    "task" : "Надо сходить к стоматологу",
+    "performer" : "Patricia Lebsack",
+    "performerId" : 4,
+    "state" : "Ожидание"
+  },
+  {
+    "id" : 5,
+    "taskTitle" : "Проект (Программирование)",
+    "task" : "Нужно понять как работает этот блядский react-query",
+    "performer" : "Chelsey Dietrich",
+    "performerId" : 5,
+    "state" : "Ожидание"
+  },
+  {
+    "id" : 6,
+    "taskTitle" : "Mrs. Dennis Schulist",
+    "task" : "Нужно закончить это тестовое чтобы попасть в движуху к пацанам ВАшникам",
+    "performer" : "Leanne Graham",
+    "performerId" : 6,
+    "state" : "Ожидание"
+  }
+]

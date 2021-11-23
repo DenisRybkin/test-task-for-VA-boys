@@ -1,26 +1,20 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, {useEffect} from 'react';
+import {useTypedSelector} from "./hooks/useTypedSelector";
+import {fetchPerformers} from "./store/actionCreates/performersAction";
+import {usePerformerActions} from "./hooks/usePerformerActions";
+import {Router} from "./router";
+import './App.scss';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+export const App: React.FC = () => {
+
+
+    // if (loading) {
+    //     return <h1>Идет загрузк...</h1>
+    // } else if (error) {
+    //     return <h1>{error}</h1>
+    // }
+
+    return (
+            <Router/>
+    )
 }
-
-export default App;
