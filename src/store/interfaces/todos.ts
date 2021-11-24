@@ -29,11 +29,11 @@ export interface FetchTodoErrorAction {
 }
 export interface SetTodoStatAction {
     type: TodoActionsType.SET_TODO_STATE;
-    payload : {id: number, state : TodoStateTypes}
+    payload : {id: string, state : TodoStateTypes}
 }
 export interface AssignTodoPerformerAction {
     type: TodoActionsType.ASSIGN_TODO_PERFORMER;
-    payload : {id: number, performer : string,performerId: number}
+    payload : {id: string, performer : string,performerId: string}
 }
 export interface CreateTodoAction {
     type: TodoActionsType.CREATE_TODO;
@@ -41,11 +41,11 @@ export interface CreateTodoAction {
 }
 export interface SetTodoTaskAction {
     type: TodoActionsType.SET_TODO_TASK;
-    payload : {id: number, task : string, taskTitle : string}
+    payload : {id: string, task : string, taskTitle : string}
 }
 export interface DeleteTodoTaskAction {
     type: TodoActionsType.DELETE_TODO_TASK;
-    payload : {id: number}
+    payload : {id: string}
 }
 export type TodosAction =
     FetchTodoAction |

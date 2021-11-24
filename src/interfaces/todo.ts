@@ -1,9 +1,9 @@
 export interface Todo {
-    id : number;
+    id : string;
     taskTitle : string | null;
     task : string | null;
     performer : string | null;
-    performerId : number;
+    performerId : string;
     state : TodoStateTypes;
 }
 export type TodoStateTypes = 'Ожидание' | 'В работе' | 'Готово';

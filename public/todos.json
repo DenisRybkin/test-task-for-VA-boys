@@ -1,6 +1,6 @@
 [
   {
-    "id" : 1,
+    "id" : "1",
     "taskTitle" : "Спорт",
     "task" : "пойти побегать 3 км надо",
     "performer" : "Leanne Graham",
@@ -8,7 +8,7 @@
     "state" : "Ожидание"
   },
   {
-    "id" : 2,
+    "id" : "2",
     "taskTitle" : "Спорт",
     "task" : "Нужно записаться в зал",
     "performer" : "Ervin Howell",
@@ -16,7 +16,7 @@
     "state" : "Ожидание"
   },
   {
-    "id" : 3,
+    "id" : "3",
     "taskTitle" : "Здоровье",
     "task" : "Наладить режим сна",
     "performer" : "Clementine Bauch",
@@ -24,7 +24,7 @@
     "state" : "Ожидание"
   },
   {
-    "id" : 4,
+    "id" : "4",
     "taskTitle" : "Здоровье",
     "task" : "Надо сходить к стоматологу",
     "performer" : "Patricia Lebsack",
@@ -32,7 +32,7 @@
     "state" : "Ожидание"
   },
   {
-    "id" : 5,
+    "id" : "5",
     "taskTitle" : "Проект (Программирование)",
     "task" : "Нужно понять как работает этот блядский react-query",
     "performer" : "Chelsey Dietrich",
@@ -40,7 +40,7 @@
     "state" : "Ожидание"
   },
   {
-    "id" : 6,
+    "id" : "6",
     "taskTitle" : "Mrs. Dennis Schulist",
     "task" : "Нужно закончить это тестовое чтобы попасть в движуху к пацанам ВАшникам",
     "performer" : "Leanne Graham",

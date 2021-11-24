@@ -6,3 +6,21 @@
   display: flex;
   justify-content: space-evenly;
 }
+.ant-tabs-tab-btn{
+  p{
+    margin-bottom: 0;
+  }
+}
+.delete-icon{
+  margin-top: 4px;
+}
+.ant-card-actions{
+  li{
+    &:last-child{
+      width: 15% !important;
+    }
+
+    width: 42.2% !important;
+  }
+
+}

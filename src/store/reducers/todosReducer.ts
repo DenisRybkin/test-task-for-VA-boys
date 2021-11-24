@@ -5,7 +5,6 @@ const initialState : TodosState = {
     loading : false,
     error : null,
 }
-
 export const todosReducer = (state = initialState, action :TodosAction) : TodosState => {
     switch (action.type) {
         case TodoActionsType.FETCH_TODOS:

@@ -1,0 +1,25 @@
+.flex-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+.ant-result {
+  &-success {
+    padding: 0;
+  }
+  &-error{
+    padding: 0;
+  }
+}
+.ant-result-icon{
+  margin-bottom: 8px;
+}
+.ant-result-title{
+  line-height: 1.1;
+  font-size: 19px;
+}
+.anticon-check-circle{
+  svg{
+    height: 50px;
+    width: 50px;
+  }
+}
