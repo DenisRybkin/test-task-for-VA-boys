@@ -2,17 +2,21 @@ import React, {useEffect} from 'react';
 import './TodoList.scss'
 import {TodoCards} from "../components/TodoCards";
 import {usePerformerActions} from "../../../hooks/usePerformerActions";
-import {useTodosActions} from "../../../hooks/useTdosActions";
+import {useTodosActionsCreators} from "../../../hooks/useTdosActionsCreators";
 import {useTypedSelector} from "../../../hooks/useTypedSelector";
 import {Result} from "antd";
 import {CheckIsLoading} from "../../../utils/helpers/checkIsLoading";
 import {TodosService} from "../../../services/TodosService";
 import {changePerformerTodoInterface, changeStateTodoInterface, editTodoInterface,} from "./TodoList.interface";
-import {Todo} from "../../../interfaces/todo";
+import {useTodosActions} from "../../../hooks/useTdosActions";
 
 export const TodoList: React.FC = () => {
     const {fetchPerformers} = usePerformerActions();
-    const {fetchTodos} = useTodosActions();
+    const {fetchTodos} = useTodosActionsCreators();
+    const {SetTodoTask,
+        setStateTodo,
+        setPerformerTodo,
+        DeleteTodoTask} = useTodosActions()
 
     const {performers, loading : performersLoading, error : performersError} = useTypedSelector(state => state.performers);
     const {todos, loading : todosLoading , error : todosError} = useTypedSelector(state => state.todos);
@@ -30,26 +34,38 @@ export const TodoList: React.FC = () => {
         newTodo.taskTitle = taskTitle;
 
         await TodosService.setTodo(newTodo)
-            .then(() => isSuccess = true)
+            .then((response) => {
+                isSuccess = true;
+                SetTodoTask({
+                    id : response.id,
+                    task : response.task,
+                    taskTitle : response.taskTitle,
+                })
+            })
             .catch(error => reqError = error)
 
         return isSuccess ? isSuccess : reqError;
     }
 
     const changeStateTodo = async ({todoId,todoStatus}: changeStateTodoInterface) => {
+        setStateTodo({state : todoStatus, id : todoId});
         const arrOfOnceTodo = todos.find((item) => item.id === todoId);
         arrOfOnceTodo!.state = todoStatus;
         await TodosService.setTodo(arrOfOnceTodo!);
     }
 
     const changePerformerTodo = async ({todoId,performerId,performer}: changePerformerTodoInterface) => {
+        setPerformerTodo({id : todoId, performerId,performer})
         const arrOfOnceTodo = todos.find((item) => item.id === todoId);
         arrOfOnceTodo!.performer = performer;
         arrOfOnceTodo!.performerId = performerId;
         await TodosService.setTodo(arrOfOnceTodo!);
     }
     const deleteTodo = async (id : string) => {
-        await TodosService.deleteTodo(id);
+        TodosService.deleteTodo(id).then(() =>{
+            DeleteTodoTask({id})
+        });
+
     }
 
     const resultOfLoading = CheckIsLoading({

@@ -38,6 +38,7 @@ export const todosReducer = (state = initialState, action :TodosAction) : TodosS
         case TodoActionsType.SET_TODO_TASK : {
             const newTodos = state.todos.map(item => {
                 if(item.id === action.payload.id){
+                    console.log("newTodos" , item);
                     item.task = action.payload.task;
                     item.taskTitle = action.payload.taskTitle;
                 }

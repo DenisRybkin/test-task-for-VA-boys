@@ -56,3 +56,22 @@ export type TodosAction =
     CreateTodoAction |
     SetTodoTaskAction |
     DeleteTodoTaskAction;
+export interface setStateTodoActionParam {
+    id: string;
+    state : TodoStateTypes;
+}
+export interface setPerformerTodoParam {
+    id: string;
+    performer : string;
+    performerId: string;
+}
+export interface CreateTodoParam {
+    todo : Todo;
+}
+export interface SetTodoTaskParam {
+    id: string;
+    task : string, taskTitle : string;
+}
+export interface DeleteTodoTaskParam {
+    id: string;
+}
