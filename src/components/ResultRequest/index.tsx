@@ -4,7 +4,7 @@ import {ResultRequestInterface} from "./ResultRequest.interface";
 
 
 
-export const ResultRequest = ({status,title,subtitle} : ResultRequestInterface) => {
+export const ResultRequest = ({status,title,subtitle} : ResultRequestInterface) : JSX.Element => {
     return (
         <Result className={'result-icon'}
             status={status}

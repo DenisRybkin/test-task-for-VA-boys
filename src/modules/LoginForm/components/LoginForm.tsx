@@ -3,7 +3,6 @@ import './Auth.scss';
 import {Checkbox, Form, Input,Button} from "antd";
 import {LockOutlined, MailOutlined} from "@ant-design/icons";
 import { Layout } from 'antd';
-import {Link} from 'react-router-dom'
 import {firstCheckingValidateStatus} from "../../../utils/helpers/checkValidateStatus";
 import {FormValues, OtherProps} from "../interfaces";
 import {FormikProps} from "formik";

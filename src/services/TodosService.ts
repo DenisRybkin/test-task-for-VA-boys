@@ -1,4 +1,3 @@
-import axios from "axios";
 import {Todo} from "../interfaces/todo";
 import {NewTodo} from "../modules/TodoList/containers/TodoList.interface";
 import {$api} from "../http";
@@ -6,7 +5,7 @@ import {$api} from "../http";
 class Service {
 
     async fetchTodos () : Promise<Todo[]>  {
-        const {data} = await axios.get<Todo[]>('https://619c0b4768ebaa001753c757.mockapi.io/todos');
+        const {data} = await $api.get<Todo[]>('/todos');
         return data;
     }
     async setTodo (todo: Todo) : Promise<Todo> {

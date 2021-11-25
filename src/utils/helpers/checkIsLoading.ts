@@ -1,5 +1,3 @@
-import {log} from "util";
-
 interface CheckIsLoadingInterface {
     firstLoading: boolean;
     secondLoading: boolean;

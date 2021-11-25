@@ -1,4 +1,3 @@
-import {FormValues} from "../../modules/LoginForm/interfaces";
 import {Errors,
     KeysProps,
     RulesInterface,

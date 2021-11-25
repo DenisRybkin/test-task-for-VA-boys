@@ -1,10 +1,10 @@
-import axios from "axios";
 import {Performer} from "../interfaces/performer";
+import {$api} from "../http";
 
 class Service {
 
     async fetchingPerformers () : Promise<Performer[]> {
-        const {data} = await axios.get<Performer[]>('https://619c0b4768ebaa001753c757.mockapi.io/performers');
+        const {data} = await $api.get<Performer[]>('/performers');
         return data;
     }
 }

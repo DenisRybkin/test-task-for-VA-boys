@@ -3,7 +3,6 @@ import './CreateTodo.scss';
 import {Button, Input, Form, Card} from "antd";
 import {CloudUploadOutlined, AppstoreAddOutlined, UploadOutlined} from '@ant-design/icons';
 import {CreateTodoCmpInterface} from "./CreateTodo.interface";
-import {Simulate} from "react-dom/test-utils";
 import {ResultRequest} from "../../../../components/ResultRequest";
 
 const inputStyleConfig = {width: "90%"}

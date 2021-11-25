@@ -1,7 +1,6 @@
 import {
     AssignTodoPerformerAction,
     CreateTodoAction,
-    CreateTodoParam,
     DeleteTodoTaskAction,
     DeleteTodoTaskParam,
     setPerformerTodoParam,

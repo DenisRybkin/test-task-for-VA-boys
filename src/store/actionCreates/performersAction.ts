@@ -1,7 +1,5 @@
 import {PerformersAction, PerformersTypes} from "../interfaces/performer";
 import {Dispatch} from "redux";
-import axios from "axios";
-import {Performer} from "../../interfaces/performer";
 import {PerformerService} from "../../services/PerformerService";
 
 export const fetchPerformers = () => {
