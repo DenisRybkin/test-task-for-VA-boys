@@ -16,11 +16,36 @@
 }
 .ant-card-actions{
   li{
+    &:first-child{
+      width: 35% !important;
+    }
     &:last-child{
       width: 15% !important;
     }
 
-    width: 42.2% !important;
+    width: 50% !important;
   }
-
+}
+.anticon-delete{
+  &:hover{
+    svg{
+      &:hover{
+        fill: #ff4d4f !important;
+      }
+    }
+  }
+  svg{
+    &:hover{
+      fill: #ff4d4f !important;
+    }
+  }
+}
+.delete-icon{
+  &:hover{
+    svg{
+      &:hover{
+        fill: #ff4d4f !important;
+      }
+    }
+  }
 }

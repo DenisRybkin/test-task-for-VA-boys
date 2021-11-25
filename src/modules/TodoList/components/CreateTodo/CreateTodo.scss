@@ -1,0 +1,19 @@
+.center-container{
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+}
+.form-new-todo{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.ant-input-affix-wrapper{
+  margin-bottom: 0;
+}
+.form-buttons{
+  display: flex;
+}

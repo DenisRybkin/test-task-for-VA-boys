@@ -1,8 +1,8 @@
 import {Performer} from "../../../../interfaces/performer";
-import {changePerformerTodoInterface} from "../../containers/TodoList.interface";
+import {ChangePerformerTodoInterface} from "../../containers/TodoList.interface";
 
 export interface SelectPerformerInterface {
-    changePerformerTodo: ({todoId,performerId,performer} :changePerformerTodoInterface) => void;
+    changePerformerTodo: ({todoId,performerId,performer} :ChangePerformerTodoInterface) => void;
     performerId : string;
     performer : string | null;
     todoId : string;

@@ -6,9 +6,7 @@ export const RequireAuth : React.FC = ({children } : any) => {
     const location = useLocation();
     const {isAuth} = useTypedSelector(state => state.user)
 
-    let isAuth1= true
-
-    if(!isAuth1){
+    if(!(window.localStorage.getItem('isAuth'))){
         return <Navigate to='/login' state={{from : location}}/>
     }
 

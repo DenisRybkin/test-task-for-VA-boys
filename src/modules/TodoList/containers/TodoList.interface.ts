@@ -1,16 +1,27 @@
 import {Todo, TodoStateTypes} from "../../../interfaces/todo";
 
-export interface editTodoInterface {
+export interface EditTodoInterface {
     todo: Todo;
     task : string;
     taskTitle : string;
 }
-export interface changeStateTodoInterface {
+export interface ChangeStateTodoInterface {
     todoStatus : TodoStateTypes;
     todoId : string;
 }
-export interface changePerformerTodoInterface {
+export interface ChangePerformerTodoInterface {
     performer : string;
     performerId : string;
     todoId : string;
+}
+export interface CreateTodoInterface {
+    taskTitle : string;
+    task : string;
+}
+export interface NewTodo {
+    taskTitle : string;
+    task : string;
+    performer : string | null;
+    performerId : string;
+    state : TodoStateTypes;
 }

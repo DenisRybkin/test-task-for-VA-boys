@@ -6,19 +6,19 @@ const { Option } = Select;
 
 
 export const SelectStatus = ({stateValue,todoId,changeStateTodo} : SelectStatusInterface) : JSX.Element => {
-    const defaultValue : TodoStateTypes = stateValue || "Ожидание";
-    const [todoStatus, setTodoStatus] = useState<TodoStateTypes>(defaultValue);
+
+    const [todoStatus, setTodoStatus] = useState<TodoStateTypes | undefined>(undefined);
 
     const handleStatus = async (value: TodoStateTypes) => {
         if (!('Ожидание' === stateValue)) {
             setTodoStatus(value);
         }
         setTodoStatus(value);
-        changeStateTodo({todoStatus: value, todoId : todoId});
+        changeStateTodo({todoStatus : stateValue, todoId : todoId});
     }
     return (
         <Select
-            value={todoStatus}
+            value={!todoStatus ? stateValue : todoStatus}
             style={{ width: 120, margin: '0 8px' }}
             onChange={handleStatus}
         >

@@ -35,6 +35,7 @@ export const TodoCard: React.FC<TodoCardInterface> = ({
     const toggleTab = (key: tabListTypes) => {
         setActiveTabKey(key);
     };
+
     return (
         <Card
             style={{width: 400, marginTop: 16}}
@@ -54,7 +55,7 @@ export const TodoCard: React.FC<TodoCardInterface> = ({
                 <SelectPerformer changePerformerTodo={changePerformerTodo}
                                  performerId={todo.performerId}
                                  performer={todo.performer}
-                                 todoId={todo.performerId}
+                                 todoId={todo.id}
                                  performersList={performers}
                 />,
                 <DeleteOutlined onClick={() => deleteTodo(todo.id)}

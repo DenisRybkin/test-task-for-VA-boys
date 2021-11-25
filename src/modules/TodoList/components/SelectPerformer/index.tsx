@@ -12,14 +12,19 @@ export const SelectPerformer = ({performer,performersList,todoId,performerId,cha
     const [todoPerformer, setTodoPerformer] = useState<string| null>(defaultValue ? defaultValue : null);
 
     const handlePerformer = (value: string) => {
+        const idOfNewPerformer = performersList?.find(item => item.name === value)!.id;
         setTodoPerformer(value);
-        changePerformerTodo({performer : value,performerId,todoId : String(todoId)})
+        changePerformerTodo({
+            performer : value,
+            performerId : String(idOfNewPerformer!),
+            todoId : String(todoId)
+        });
     }
 
     return (
         <Select
             value={todoPerformer ? todoPerformer : undefined}
-            style={{ width: 120, margin: '0 8px' }}
+            style={{ width: 170, margin: '0 8px' }}
             onChange={handlePerformer}
         >
             {performersList && performersList.map(item => (

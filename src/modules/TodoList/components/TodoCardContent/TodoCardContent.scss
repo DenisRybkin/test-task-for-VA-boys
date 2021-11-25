@@ -1,6 +1,9 @@
 .flex-container{
   display: flex;
   justify-content: space-evenly;
+  .ant-row.ant-form-item{
+    margin-bottom: 0;
+  }
 }
 .ant-result {
   &-success {
@@ -17,9 +20,16 @@
   line-height: 1.1;
   font-size: 19px;
 }
-.anticon-check-circle{
-  svg{
-    height: 50px;
-    width: 50px;
+.result-icon{
+  .ant-result-icon{
+    span{
+      height: 50px!important;
+      width: 50px !important;
+      svg{
+        height: 50px!important;
+        width: 50px !important;
+      }
+    }
   }
+
 }

@@ -2,3 +2,27 @@
   display: flex;
   justify-content: center;
 }
+.todos-actions{
+  display: flex;
+  justify-content: space-between;
+  width: 600px;
+  margin: 40px auto 40px auto;
+}
+.ant-list{
+  width: 600px;
+}
+.list-todos{
+  margin-bottom: 50px;
+  display: flex;
+  justify-content: center;
+}
+.column-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.ant-list-items{
+  background-color: #ffffff;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}

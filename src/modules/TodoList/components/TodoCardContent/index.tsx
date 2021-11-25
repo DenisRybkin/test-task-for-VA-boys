@@ -1,19 +1,23 @@
-import React, {ReactNode, useMemo, useCallback, useState} from 'react';
+import React, {ReactNode, useMemo, useCallback, useState, useEffect} from 'react';
 import {Avatar, Button, Card, Form, Input, Result, Skeleton} from "antd";
 import './TodoCardContent.scss'
 import {TodoCardsContentInterface} from "./TodoCardsContent.interface";
 import {TodosService} from "../../../../services/TodosService";
 import {checkResultStatus} from "../../../../utils/helpers/checkResultStatus";
 import {ResultStatusType} from "antd/lib/result";
+import {ResultRequest} from "../../../../components/ResultRequest";
 
 const {Meta} = Card;
 
 
 export const TodoCardContent : React.FC<TodoCardsContentInterface> = ({buttonIsSubmitting,setButtonIsSubmitting,activeTabKey,todo,performers,editTodo} : TodoCardsContentInterface) => {
 
+    console.log('rendor');
     const [taskTitle, setTaskTitle] = useState<string>(todo.taskTitle!);
     const [task, setTask] = useState<string>(todo.task!);
     const [resultRequest, setResultRequest] = useState<null|true|string>(null);
+    const [loading, setLoading] = useState<boolean>(false);
+    const [avatarPerformer, setAvatarPerformer] = useState<null | string>(null);
 
 
     const isDisabled : boolean = (task === todo.task && taskTitle === todo.taskTitle);
@@ -28,9 +32,11 @@ export const TodoCardContent : React.FC<TodoCardsContentInterface> = ({buttonIsS
 
 
     const onRemakeTodo = async () => {
+        setLoading(true);
         await editTodo({todo, taskTitle, task})
             .then(res => setResultRequest(res === true ? true : String(res)));
         setButtonIsSubmitting(true);
+        setLoading(false);
     }
 
     const onResetTaskValues =  ()  => {
@@ -39,24 +45,29 @@ export const TodoCardContent : React.FC<TodoCardsContentInterface> = ({buttonIsS
         setButtonIsSubmitting(true);
     }
 
-    const returnAvatar = useMemo(()=> {
+    const returnAvatar = () => {
         if(!todo.performerId || !todo.performer){
             return null;
         }
         if(performers.length > 0){
-            // @ts-ignore
-            return <Avatar src={performers[todo.performerId].avatar}/>
+            return performers[Number(todo.performerId)-1].avatar
         } else {
             return null;
         }
-    } ,[performers,todo])
+    }
+
+    useEffect(() => {
+        console.log(returnAvatar());
+        return setAvatarPerformer(returnAvatar());
+    }, [returnAvatar, todo]);
+
 
 
 
     const contentList : {task : ReactNode, edit : ReactNode} = {
         task: <Skeleton loading={false} avatar active>
             <Meta
-                avatar={returnAvatar}
+                avatar={<Avatar src={avatarPerformer}/>}
                 title={todo.taskTitle}
                 description={todo.task}
             />
@@ -96,12 +107,13 @@ export const TodoCardContent : React.FC<TodoCardsContentInterface> = ({buttonIsS
                 <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
                     <Button onClick={onRemakeTodo}
                             disabled={isDisabled}
-                            type="primary">
+                            type="primary"
+                            loading={loading}>
                         Сохранить
                     </Button>
                 </Form.Item>
             </div>
-        </Form> : <Result
+        </Form> : <ResultRequest
             // @ts-ignore
             status={checkResultStatus({
                 resultRequest,

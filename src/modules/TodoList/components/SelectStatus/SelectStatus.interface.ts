@@ -1,9 +1,9 @@
-import {changeStateTodoInterface, editTodoInterface} from "../../containers/TodoList.interface";
+import {ChangeStateTodoInterface} from "../../containers/TodoList.interface";
 
 export interface SelectStatusInterface {
-    stateValue? : TodoStateTypes;
+    stateValue : TodoStateTypes;
     todoId : string;
-    changeStateTodo : ({todoStatus,todoId}: changeStateTodoInterface) => void;
+    changeStateTodo : ({todoStatus,todoId}: ChangeStateTodoInterface) => void;
 }
 
 export type TodoStateTypes = 'Ожидание' | 'В работе' | 'Готово';

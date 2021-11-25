@@ -1,3 +1,5 @@
+import {log} from "util";
+
 interface CheckIsLoadingInterface {
     firstLoading: boolean;
     secondLoading: boolean;
@@ -5,15 +7,15 @@ interface CheckIsLoadingInterface {
     secondError: null | string;
 }
 
-interface ErrorsInterface {
+export interface ErrorsInterface {
     errors: { firstError: string, secondError: string }
 }
 
-interface ErrorInterface {
+export interface ErrorInterface {
     error: string;
 }
 
-interface LoadingInterface {
+export interface LoadingInterface {
     loading : boolean
 }
 

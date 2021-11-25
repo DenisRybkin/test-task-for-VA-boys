@@ -11,6 +11,7 @@ import {
     SetTodoTaskParam,
     TodoActionsType
 } from "../interfaces/todos";
+import {Todo} from "../../interfaces/todo";
 
 export const setStateTodo = ({id,state}: setStateTodoActionParam) : SetTodoStatAction => ({
     type : TodoActionsType.SET_TODO_STATE,
@@ -21,7 +22,7 @@ export const setPerformerTodo = ({id,performerId,performer} : setPerformerTodoPa
     type : TodoActionsType.ASSIGN_TODO_PERFORMER,
     payload : {id,performer,performerId}
 })
-export const CreateTodo = ({todo} : CreateTodoParam) : CreateTodoAction => ({
+export const CreateTodo = (todo : Todo) : CreateTodoAction => ({
     type : TodoActionsType.CREATE_TODO,
     payload : {todo}
 })

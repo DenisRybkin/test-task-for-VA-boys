@@ -22,11 +22,9 @@ const LoginForm = ({
                        handleChange,
                        handleBlur,
                        isValid,
-                       handleSubmit,
-                       resetForm,
                    } :OtherProps & FormikProps<FormValues>) => {
-    const [formIsDispatched, setFormIsDispatched] = useState(false);
-    const [loginError, setLoginError] = useState(false);
+    const [formIsDispatched, setFormIsDispatched] = useState<boolean>(false);
+    const [loginError, setLoginError] = useState<boolean>(false);
 
     let navigate = useNavigate();
 
@@ -41,14 +39,12 @@ const LoginForm = ({
 
     }
 
-    console.log(formIsDispatched &&
-        isValid ? "success ##" : "error ##");
-
     const authorization = () => {
         setFormIsDispatched(true);
        if(authenticationUser(values)){
            authUser(values.email);
            navigate('/', { replace: true });
+           window.localStorage.isAuth='true';
            setFormIsDispatched(false);
        } else {
            setFormIsDispatched(false);
@@ -144,8 +140,6 @@ const LoginForm = ({
                                         войти в аккаунт
                                     </Button>
                                 </Form.Item>
-
-                                <Link to="/registration" className="registration-link">Зарегестрироваться</Link>
                             </Form>
                         </div>
                     </div>
