@@ -12,7 +12,6 @@ const {Meta} = Card;
 
 export const TodoCardContent : React.FC<TodoCardsContentInterface> = ({buttonIsSubmitting,setButtonIsSubmitting,activeTabKey,todo,performers,editTodo} : TodoCardsContentInterface) => {
 
-    console.log('rendor');
     const [taskTitle, setTaskTitle] = useState<string>(todo.taskTitle!);
     const [task, setTask] = useState<string>(todo.task!);
     const [resultRequest, setResultRequest] = useState<null|true|string>(null);
@@ -33,10 +32,10 @@ export const TodoCardContent : React.FC<TodoCardsContentInterface> = ({buttonIsS
 
     const onRemakeTodo = async () => {
         setLoading(true);
-        await editTodo({todo, taskTitle, task})
-            .then(res => setResultRequest(res === true ? true : String(res)));
-        setButtonIsSubmitting(true);
-        setLoading(false);
+        // await editTodo({todo, taskTitle, task})
+        //     .then(res => setResultRequest(res === true ? true : String(res)));
+        // setButtonIsSubmitting(true);
+        // setLoading(false);
     }
 
     const onResetTaskValues =  ()  => {
